@@ -337,3 +337,4 @@ new ArrayBlockingQueue<>(capacity, true)
 or build your own coordination mechanism.
 
 For typical thread pools and work queues, the assignment is effectively **scheduler-dependent rather than strictly FIFO among waiting consumers**.
+f f
