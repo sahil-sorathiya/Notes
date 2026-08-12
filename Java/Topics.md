@@ -48,10 +48,6 @@
 - continue
 - labeled statements
 
----
-
-# 2. Methods and Arrays
-
 ### Methods
 - Method Declaration
 - Parameters
@@ -61,24 +57,24 @@
 - Pass by Value
 
 ### Arrays
-- One-Dimensional Arrays
-- Multi-Dimensional Arrays
-- Jagged Arrays
-- Array Operations
-- Command Line Arguments
+- One-Dimensional Arrays ✅
+- Multi-Dimensional Arrays ✅
+- Jagged Arrays ✅
+- Array Operations ✅
+- Command Line Arguments ✅
 
 ### String Handling
-- String
-- StringBuilder
-- StringBuffer
-- String Pool
-- Immutable Objects
-- String Methods
-- Regular Expressions (Regex)
+- String ✅
+- StringBuilder ✅
+- StringBuffer ✅
+- String Pool ✅
+- Immutable Objects ✅
+- String Methods ✅
+- Regular Expressions (Regex) ❌
 
 ---
 
-# 3. Object-Oriented Programming (Core Java)
+# 2. Object-Oriented Programming (Core Java)
 
 ### Classes and Objects
 - Class
@@ -126,7 +122,7 @@
 
 ---
 
-# 4. Advanced OOP Concepts
+# 3. Advanced OOP Concepts
 
 - Association
 - Aggregation
@@ -150,7 +146,7 @@
 
 ---
 
-# 5. Exception Handling
+# 4. Exception Handling
 
 ### Exceptions
 - Exception Hierarchy
@@ -171,7 +167,7 @@
 
 ---
 
-# 6. Collections Framework
+# 5. Collections Framework
 
 ### List
 - ArrayList
@@ -208,7 +204,7 @@
 
 ---
 
-# 7. Generics
+# 6. Generics
 
 - Generic Classes
 - Generic Methods
@@ -219,7 +215,7 @@
 
 ---
 
-# 8. Java I/O
+# 7. Java I/O
 
 ### File Handling
 - File Class
@@ -239,7 +235,7 @@
 
 ---
 
-# 9. Java NIO (New I/O)
+# 8. Java NIO (New I/O)
 
 - Path
 - Files
@@ -250,7 +246,7 @@
 
 ---
 
-# 10. Multithreading and Concurrency
+# 9. Multithreading and Concurrency
 
 ### Basics
 - Thread Class
@@ -279,7 +275,7 @@
 
 ---
 
-# 11. Lambda Expressions & Functional Programming
+# 10. Lambda Expressions & Functional Programming
 
 ### Lambda Expressions
 - Syntax
@@ -300,7 +296,7 @@
 
 ---
 
-# 12. Stream API
+# 11. Stream API
 
 ### Streams
 - Creation of Streams
@@ -328,7 +324,7 @@
 
 ---
 
-# 13. Date and Time API
+# 12. Date and Time API
 
 ### java.time Package
 - LocalDate
@@ -341,7 +337,7 @@
 
 ---
 
-# 14. JDBC (Database Connectivity)
+# 13. JDBC (Database Connectivity)
 
 ### Database Basics
 - JDBC Architecture
@@ -362,7 +358,7 @@
 
 ---
 
-# 15. Reflection API
+# 14. Reflection API
 
 - Class Class
 - Methods Inspection
@@ -372,7 +368,7 @@
 
 ---
 
-# 16. Annotations
+# 15. Annotations
 
 ### Built-in Annotations
 - @Override
@@ -386,7 +382,7 @@
 
 ---
 
-# 17. Serialization and Memory Management
+# 16. Serialization and Memory Management
 
 - Heap Memory
 - Stack Memory
@@ -400,7 +396,7 @@
 
 ---
 
-# 18. Java Modules (Java 9+)
+# 17. Java Modules (Java 9+)
 
 - Module System
 - module-info.java
@@ -409,7 +405,7 @@
 
 ---
 
-# 19. JVM Internals
+# 18. JVM Internals
 
 ### JVM Architecture
 - Class Loader
@@ -428,7 +424,7 @@
 
 ---
 
-# 20. Design Patterns
+# 19. Design Patterns
 
 ### Creational
 - Singleton
@@ -454,7 +450,7 @@
 
 ---
 
-# 21. Advanced Java
+# 20. Advanced Java
 
 - Immutable Objects
 - Records
@@ -467,7 +463,7 @@
 
 ---
 
-# 22. Java Testing
+# 21. Java Testing
 
 ### Unit Testing
 - JUnit 5
@@ -482,7 +478,7 @@
 
 ---
 
-# 23. Build Tools
+# 22. Build Tools
 
 ### Maven
 - Project Structure
@@ -495,7 +491,7 @@
 
 ---
 
-# 24. Logging
+# 23. Logging
 
 - java.util.logging
 - Log4j
@@ -504,7 +500,7 @@
 
 ---
 
-# 25. Spring Ecosystem (Java Backend)
+# 24. Spring Ecosystem (Java Backend)
 
 ### Spring Core
 - Dependency Injection
@@ -535,7 +531,7 @@
 
 ---
 
-# 26. Enterprise & Distributed Systems
+# 25. Enterprise & Distributed Systems
 
 - REST APIs
 - SOAP
@@ -549,7 +545,7 @@
 
 ---
 
-# 27. Expert-Level Topics
+# 26. Expert-Level Topics
 
 - Java Memory Model (JMM)
 - Lock-Free Programming

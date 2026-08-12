@@ -1,0 +1,2 @@
+- Add note on "Object" class notes, "why use String.valueOf(Obj) instead of Obj.toString()?".
+- Add note on "+" operator in Operators section, "+ is defined to work only if both operands are primitives or one of them is string(Other can be either primitive or non-primitive)".
