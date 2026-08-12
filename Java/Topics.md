@@ -149,21 +149,21 @@
 # 4. Exception Handling
 
 ### Exceptions
-- Exception Hierarchy
-- Checked Exceptions
-- Unchecked Exceptions
+- Exception Hierarchy ✅
+- Checked Exceptions ✅
+- Unchecked Exceptions ✅
 
 ### Keywords
-- try
-- catch
-- finally
-- throw
-- throws
+- try ✅
+- catch ✅
+- finally ✅
+- throw ✅
+- throws ✅
 
 ### Advanced Exception Handling
-- Multiple Catch Blocks
-- Custom Exceptions
-- Try-With-Resources
+- Multiple Catch Blocks ✅
+- Custom Exceptions ✅
+- Try-With-Resources ✅
 
 ---
 
