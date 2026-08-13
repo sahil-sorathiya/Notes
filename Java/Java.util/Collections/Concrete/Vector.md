@@ -1,4 +1,8 @@
-The uploaded file is the source of `java.util.Vector<E>`. 
+### Inherited from parent (not redeclared here)
+
+```java
+
+```
 
 ### Public Constructors
 
@@ -100,15 +104,15 @@ ListIterator<E> listIterator(int index)
 
 ListIterator<E> listIterator()
 
-Iterator<E> iterator()
+Iterator<E> iterator()  // Iterable
 
-void forEach(Consumer<? super E> action)
+void forEach(Consumer<? super E> action)  // Iterable
+
+Spliterator<E> spliterator()  // Iterable
 
 void replaceAll(UnaryOperator<E> operator)
 
 void sort(Comparator<? super E> c)
-
-Spliterator<E> spliterator()
 ```
 
 ### Protected Methods

@@ -1,9 +1,14 @@
-For `AbstractCollection<E>`, the **public methods declared in the class itself** are:
+### Inherited from parent (not redeclared here)
+
+```java
+void forEach(Consumer<? super T> action);  // Declared in "Iterable", Inheriting from "Iterable"
+Spliterator<T> spliterator();  // Declared in "Iterable", Inheriting from "Collection"
+```
 
 ### Abstract Methods
 
 ```java
-public abstract Iterator<E> iterator();
+public abstract Iterator<E> iterator();  // Iterable
 
 public abstract int size();
 ```

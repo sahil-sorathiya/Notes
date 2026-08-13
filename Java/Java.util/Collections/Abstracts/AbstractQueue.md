@@ -1,3 +1,11 @@
+### Inherited from parent (not redeclared here)
+
+```java
+Iterator<E> iterator(); // Declared in "Iterable", Inheriting from "AbstractCollection"
+void forEach(Consumer<? super T> action);  // Declared in "Iterable", Inheriting from "Iterable"
+Spliterator<T> spliterator();  // Declared in "Iterable", Inheriting from "Collection"
+```
+
 ### Public Methods
 
 ```java

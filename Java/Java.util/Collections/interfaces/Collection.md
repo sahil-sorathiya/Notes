@@ -1,14 +1,32 @@
-Assuming the file is the source for `java.util.Collection<E>`, the **public methods declared in `Collection<E>`** are: 
+## Inherited from Parent (not redeclared here)
+
+```java
+void forEach(Consumer<? super T> action);  // Declared in "Iterable", Inheriting from "Iterable"
+```
+
+## `Iterable` Methods
+
+```java
+public Iterator<E> iterator();  // Iterable
+
+public Spliterator<E> spliterator(); // Iterable
+```
+
+## Declared Directly in `Collection`
 
 ### Query Operations
 
 ```java
 int size();
+
 boolean isEmpty();
+
 boolean contains(Object o);
-Iterator<E> iterator();
+
 Object[] toArray();
+
 <T> T[] toArray(T[] a);
+
 default <T> T[] toArray(IntFunction<T[]> generator);
 ```
 
@@ -16,6 +34,7 @@ default <T> T[] toArray(IntFunction<T[]> generator);
 
 ```java
 boolean add(E e);
+
 boolean remove(Object o);
 ```
 
@@ -23,10 +42,15 @@ boolean remove(Object o);
 
 ```java
 boolean containsAll(Collection<?> c);
+
 boolean addAll(Collection<? extends E> c);
+
 boolean removeAll(Collection<?> c);
+
 default boolean removeIf(Predicate<? super E> filter);
+
 boolean retainAll(Collection<?> c);
+
 void clear();
 ```
 
@@ -34,15 +58,13 @@ void clear();
 
 ```java
 boolean equals(Object o);
+
 int hashCode();
 ```
 
 ### Traversal & Streams
 
 ```java
-@Override
-default Spliterator<E> spliterator();
-
 default Stream<E> stream();
 
 default Stream<E> parallelStream();

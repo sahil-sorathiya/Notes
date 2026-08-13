@@ -1,6 +1,8 @@
-This file is the source of **`java.util.ArrayDeque<E>`**. The following are all the **public methods and constructors** declared in the class. 
+### Inherited from parent (not redeclared here)
 
----
+```java
+void forEach(Consumer<? super T> action);  // Declared in "Iterable", Inheriting from "Iterable"
+```
 
 ### Constructors
 
@@ -78,18 +80,23 @@ public E pop();
 
 ---
 
+### Iterator Operations
+
+```java
+public Iterator<E> iterator();  // Iterable
+
+public Spliterator<E> spliterator(); // Iterable
+```
+
+
+---
+
 ### Collection Operations
 
 ```java
 public int size();
 
 public boolean isEmpty();
-
-public Iterator<E> iterator();
-
-public Spliterator<E> spliterator();
-
-public void forEach(Consumer<? super E> action);
 
 public boolean removeIf(Predicate<? super E> filter);
 
@@ -126,7 +133,8 @@ public ArrayDeque<E> clone();
 | Deque methods                                     |     15 |
 | Queue methods                                     |      6 |
 | Stack methods                                     |      2 |
-| Collection methods                                |     13 |
+| Iterator methods                                  |      2 |
+| Collection methods                                |     11 |
 | Object methods                                    |      1 |
 | **Total (including constructors)**                | **40** |
 | **Total public methods (excluding constructors)** | **37** |

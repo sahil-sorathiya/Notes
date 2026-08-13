@@ -1,16 +1,40 @@
-`SequencedCollection<E>` declares **7 public methods** of its own.
+## Inherited from Parent (not redeclared here)
 
-### Abstract Method
+```java
+// Declared in "Iterable", Inheriting from "Iterable"
+void forEach(Consumer<? super T> action);
+
+// Declared in "Iterable", Inheriting from "Collection"
+Iterator<E> iterator();
+Spliterator<T> spliterator();
+
+// All Methods of Collection
+// Declared in "Collection", Inheriting from "Collection"
+int size();
+boolean isEmpty();
+boolean contains(Object o);
+Object[] toArray();
+<T> T[] toArray(T[] a);
+default <T> T[] toArray(IntFunction<T[]> generator);
+boolean add(E e);
+boolean remove(Object o);
+boolean containsAll(Collection<?> c);
+boolean addAll(Collection<? extends E> c);
+boolean removeAll(Collection<?> c);
+default boolean removeIf(Predicate<? super E> filter);
+boolean retainAll(Collection<?> c);
+void clear();
+boolean equals(Object o);
+int hashCode();
+default Stream<E> stream();
+default Stream<E> parallelStream();
+```
+
+## Declared Directly in `SequencedCollection`
 
 ```java
 SequencedCollection<E> reversed();
-```
 
----
-
-### Default Methods
-
-```java
 default void addFirst(E e)
 
 default void addLast(E e)
@@ -23,25 +47,3 @@ default E removeFirst()
 
 default E removeLast()
 ```
-
----
-
-### Complete List
-
-| Method          | Return Type              | Type     |
-| --------------- | ------------------------ | -------- |
-| `reversed()`    | `SequencedCollection<E>` | Abstract |
-| `addFirst(E e)` | `void`                   | Default  |
-| `addLast(E e)`  | `void`                   | Default  |
-| `getFirst()`    | `E`                      | Default  |
-| `getLast()`     | `E`                      | Default  |
-| `removeFirst()` | `E`                      | Default  |
-| `removeLast()`  | `E`                      | Default  |
-
-### Count
-
-* Abstract methods: **1**
-* Default methods: **6**
-* Total methods declared in `SequencedCollection`: **7**
-
-Since `SequencedCollection<E>` extends `Collection<E>`, it also **inherits all 20 public methods from `Collection`**, making **27 accessible public methods in total** (20 inherited + 7 declared).

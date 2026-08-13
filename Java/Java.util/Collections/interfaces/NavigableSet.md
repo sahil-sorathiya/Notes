@@ -1,7 +1,79 @@
-From `java.util.NavigableSet<E>`, the public methods are: 
+## Inherited from Parent (not redeclared here)
 
----
+```java
+// Declared in "Iterable", Inheriting from "Iterable"
+void forEach(Consumer<? super T> action);
 
+// Declared in "Iterable", Inheriting from "SortedSet"
+Spliterator<T> spliterator();                       
+
+// Declared in "Collection", Inheriting from "Collection"
+<T> T[] toArray(IntFunction<T[]> generator);        
+boolean removeIf(Predicate<? super E> filter);
+Stream<E> stream();
+Stream<E> parallelStream();
+
+// Declared in "Collection", Inheriting from "Set"
+int size();
+boolean isEmpty();
+boolean contains(Object o);
+Object[] toArray();
+<T> T[] toArray(T[] a);
+boolean add(E e);
+boolean remove(Object o);
+boolean containsAll(Collection<?> c);
+boolean addAll(Collection<? extends E> c);
+boolean removeAll(Collection<?> c);
+boolean retainAll(Collection<?> c);
+void clear();
+boolean equals(Object o);
+int hashCode();
+
+// Declared in "Set", Inheriting from "Set"
+static <E> Set<E> of(E... elements);
+static <E> Set<E> copyOf(Collection<? extends E> coll);
+
+// Declared in "SortedSet", Inheriting from "SortedSet"
+Comparator<? super E> comparator();  
+E first();
+E last();
+```
+
+## `Iterable` Methods
+
+```java
+Iterator<E> iterator();  // Iterable
+```
+
+## `SequenceCollection` Methods
+
+```java
+default NavigableSet<E> reversed();
+
+default void addFirst(E e)
+
+default void addLast(E e)
+
+default E getFirst()
+
+default E getLast()
+
+default E removeFirst()
+
+default E removeLast()
+```
+
+## `SortedSet` Methods
+
+```java
+SortedSet<E> subSet(E fromElement, E toElement);
+
+SortedSet<E> headSet(E toElement);
+
+SortedSet<E> tailSet(E fromElement);
+```
+
+## Declared Directly in `NavigableSet`
 ### Navigation Operations
 
 ```java
@@ -14,8 +86,6 @@ E ceiling(E e);
 E higher(E e);
 ```
 
----
-
 ### Endpoint Operations
 
 ```java
@@ -24,187 +94,20 @@ E pollFirst();
 E pollLast();
 ```
 
----
-
 ### Iteration & Views
 
 ```java
-Iterator<E> iterator();
-
 NavigableSet<E> descendingSet();
 
 Iterator<E> descendingIterator();
-
-default NavigableSet<E> reversed();
 ```
-
----
 
 ### Range View Operations
 
 ```java
-NavigableSet<E> subSet(E fromElement,
-                       boolean fromInclusive,
-                       E toElement,
-                       boolean toInclusive);
+NavigableSet<E> subSet(E fromElement, boolean fromInclusive, E toElement, boolean toInclusive);
 
-NavigableSet<E> headSet(E toElement,
-                        boolean inclusive);
+NavigableSet<E> headSet(E toElement, boolean inclusive);
 
-NavigableSet<E> tailSet(E fromElement,
-                        boolean inclusive);
-
-SortedSet<E> subSet(E fromElement,
-                    E toElement);
-
-SortedSet<E> headSet(E toElement);
-
-SortedSet<E> tailSet(E fromElement);
+NavigableSet<E> tailSet(E fromElemen boolean inclusive);
 ```
-
----
-
-### Sequenced Collection Operations
-
-```java
-default E removeFirst();
-
-default E removeLast();
-```
-
----
-
-### Inherited from SortedSet
-
-```java
-Comparator<? super E> comparator();
-
-E first();
-
-E last();
-
-default Spliterator<E> spliterator();
-
-default void addFirst(E e);
-
-default void addLast(E e);
-
-default E getFirst();
-
-default E getLast();
-```
-
----
-
-### Inherited from Set
-
-```java
-int size();
-
-boolean isEmpty();
-
-boolean contains(Object o);
-
-Object[] toArray();
-
-<T> T[] toArray(T[] a);
-
-boolean add(E e);
-
-boolean remove(Object o);
-
-boolean containsAll(Collection<?> c);
-
-boolean addAll(Collection<? extends E> c);
-
-boolean retainAll(Collection<?> c);
-
-boolean removeAll(Collection<?> c);
-
-void clear();
-
-boolean equals(Object o);
-
-int hashCode();
-```
-
----
-
-### Methods Declared Directly in `NavigableSet`
-
-```java
-E lower(E e);
-
-E floor(E e);
-
-E ceiling(E e);
-
-E higher(E e);
-
-E pollFirst();
-
-E pollLast();
-
-Iterator<E> iterator();
-
-NavigableSet<E> descendingSet();
-
-Iterator<E> descendingIterator();
-
-NavigableSet<E> subSet(E fromElement,
-                       boolean fromInclusive,
-                       E toElement,
-                       boolean toInclusive);
-
-NavigableSet<E> headSet(E toElement,
-                        boolean inclusive);
-
-NavigableSet<E> tailSet(E fromElement,
-                        boolean inclusive);
-
-SortedSet<E> subSet(E fromElement,
-                    E toElement);
-
-SortedSet<E> headSet(E toElement);
-
-SortedSet<E> tailSet(E fromElement);
-
-default E removeFirst();
-
-default E removeLast();
-
-default NavigableSet<E> reversed();
-```
-
-### New operations introduced by `NavigableSet`
-
-```java
-E lower(E e);
-
-E floor(E e);
-
-E ceiling(E e);
-
-E higher(E e);
-
-E pollFirst();
-
-E pollLast();
-
-NavigableSet<E> descendingSet();
-
-Iterator<E> descendingIterator();
-
-NavigableSet<E> subSet(E fromElement,
-                       boolean fromInclusive,
-                       E toElement,
-                       boolean toInclusive);
-
-NavigableSet<E> headSet(E toElement,
-                        boolean inclusive);
-
-NavigableSet<E> tailSet(E fromElement,
-                        boolean inclusive);
-```
-
-The methods `subSet(E,E)`, `headSet(E)`, `tailSet(E)`, `removeFirst()`, `removeLast()`, and `reversed()` are redeclarations/overrides of methods inherited from parent interfaces.

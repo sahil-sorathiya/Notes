@@ -1,3 +1,9 @@
+### Inherited from parent (not redeclared here)
+
+```java
+
+```
+
 ### Constructors
 
 ```java
@@ -44,8 +50,6 @@ public Object[] toArray();
 
 public <T> T[] toArray(T[] a);
 
-public Iterator<E> iterator();
-
 public int size();
 
 public void clear();
@@ -61,10 +65,12 @@ public Comparator<? super E> comparator();
 
 ---
 
-### Spliterator
+### Iterator Operations
 
 ```java
-public final Spliterator<E> spliterator();
+public Iterator<E> iterator();  // Iterable
+public final Spliterator<E> spliterator();  // Iterable
+public void forEach(Consumer<? super E> action);  // Iterable
 ```
 
 ---
@@ -77,8 +83,6 @@ public boolean removeIf(Predicate<? super E> filter);
 public boolean removeAll(Collection<?> c);
 
 public boolean retainAll(Collection<?> c);
-
-public void forEach(Consumer<? super E> action);
 ```
 
 ---

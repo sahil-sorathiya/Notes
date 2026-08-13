@@ -1,4 +1,10 @@
-The file is the source of `java.util.ArrayList`. 
+### Inherited from parent (not redeclared here)
+
+```java
+
+```
+
+
 
 ### Public constructors
 
@@ -14,9 +20,9 @@ ArrayList(Collection<? extends E> c)
 void trimToSize()
 void ensureCapacity(int minCapacity)
 
-int size()
-boolean isEmpty()
-boolean contains(Object o)
+int size()  // Collection
+boolean isEmpty()  // Collection
+boolean contains(Object o)  // Collection
 
 int indexOf(Object o)
 int lastIndexOf(Object o)
@@ -56,13 +62,13 @@ boolean retainAll(Collection<?> c)
 ListIterator<E> listIterator(int index)
 ListIterator<E> listIterator()
 
-Iterator<E> iterator()
+Iterator<E> iterator()  // Iterable
 
 List<E> subList(int fromIndex, int toIndex)
 
-void forEach(Consumer<? super E> action)
+void forEach(Consumer<? super E> action)  // Iterable
 
-Spliterator<E> spliterator()
+Spliterator<E> spliterator()  // Iterable
 
 boolean removeIf(Predicate<? super E> filter)
 

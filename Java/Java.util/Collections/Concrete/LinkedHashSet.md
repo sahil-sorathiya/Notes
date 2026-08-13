@@ -1,3 +1,7 @@
+### Inherits
+
+All Methods of HashSet
+
 ### Constructors
 
 ```java

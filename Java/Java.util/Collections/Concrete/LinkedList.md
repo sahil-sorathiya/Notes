@@ -1,4 +1,9 @@
-The file is the source of `java.util.LinkedList<E>` and contains the following **public methods**. 
+### Inherited from parent (not redeclared here)
+
+```java
+void forEach(Consumer<? super T> action);  // Declared in "Iterable", Inheriting from "Iterable"
+Iterator<E> iterator(); // Declared in "Iterable", Inheriting from "AbstractSequencialList"
+```
 
 ### Constructors
 
@@ -10,6 +15,13 @@ public LinkedList(Collection<? extends E> c);
 
 ---
 
+### Iterator Operations
+
+```java
+public Spliterator<E> spliterator();  // Iterable
+```
+
+---
 ### Deque Operations
 
 ```java
@@ -86,8 +98,6 @@ public void clear();
 public Object[] toArray();
 
 public <T> T[] toArray(T[] a);
-
-public Spliterator<E> spliterator();
 
 public Object clone();
 ```

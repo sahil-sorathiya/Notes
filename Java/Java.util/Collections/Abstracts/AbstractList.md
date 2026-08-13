@@ -1,4 +1,9 @@
-The uploaded file is **`java.util.AbstractList<E>`**.
+### Inherited from parent (not redeclared here)
+
+```java
+void forEach(Consumer<? super T> action);  // Declared in "Iterable", Inheriting from "Iterable"
+Spliterator<T> spliterator();  // Declared in "Iterable", Inheriting from "Collection"
+```
 
 ## Public Methods in `AbstractList<E>`
 
@@ -48,7 +53,7 @@ public boolean addAll(int index,
 ### Iterator Operations
 
 ```java
-public Iterator<E> iterator();
+public Iterator<E> iterator();  // Iterable
 
 public ListIterator<E> listIterator();
 
@@ -112,7 +117,7 @@ lastIndexOf(Object)
 clear()
 addAll(int, Collection)
 
-iterator()
+iterator()  // Iterable
 listIterator()
 listIterator(int)
 

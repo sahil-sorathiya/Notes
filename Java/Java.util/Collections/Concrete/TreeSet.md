@@ -1,4 +1,8 @@
-From `java.util.TreeSet<E>` 
+### Inherited from parent (not redeclared here)
+
+```java
+void forEach(Consumer<? super T> action);  // Declared in "Iterable", Inheriting from "Iterable"
+```
 
 ### Constructors
 
@@ -17,13 +21,13 @@ public TreeSet(SortedSet<E> s);
 ### Iteration & Views
 
 ```java
-public Iterator<E> iterator();
+public Iterator<E> iterator();  // Iterable
+
+public Spliterator<E> spliterator();  // Iterable
 
 public Iterator<E> descendingIterator();
 
 public NavigableSet<E> descendingSet();
-
-public Spliterator<E> spliterator();
 ```
 
 ---
@@ -81,19 +85,13 @@ public E pollLast();
 ### Range Views
 
 ```java
-public NavigableSet<E> subSet(E fromElement,
-                              boolean fromInclusive,
-                              E toElement,
-                              boolean toInclusive);
+public NavigableSet<E> subSet(E fromElement, boolean fromInclusive, E toElement, boolean toInclusive);
 
-public NavigableSet<E> headSet(E toElement,
-                               boolean inclusive);
+public NavigableSet<E> headSet(E toElement, boolean inclusive);
 
-public NavigableSet<E> tailSet(E fromElement,
-                               boolean inclusive);
+public NavigableSet<E> tailSet(E fromElement, boolean inclusive);
 
-public SortedSet<E> subSet(E fromElement,
-                           E toElement);
+public SortedSet<E> subSet(E fromElement, E toElement);
 
 public SortedSet<E> headSet(E toElement);
 
@@ -123,7 +121,7 @@ public Object clone();
 ### Complete Public Method List (excluding constructors)
 
 ```java
-public Iterator<E> iterator();
+public Iterator<E> iterator();  // Iterable
 
 public Iterator<E> descendingIterator();
 
@@ -143,19 +141,13 @@ public void clear();
 
 public boolean addAll(Collection<? extends E> c);
 
-public NavigableSet<E> subSet(E fromElement,
-                              boolean fromInclusive,
-                              E toElement,
-                              boolean toInclusive);
+public NavigableSet<E> subSet(E fromElement, boolean fromInclusive, E toElement, boolean toInclusive);
 
-public NavigableSet<E> headSet(E toElement,
-                               boolean inclusive);
+public NavigableSet<E> headSet(E toElement, boolean inclusive);
 
-public NavigableSet<E> tailSet(E fromElement,
-                               boolean inclusive);
+public NavigableSet<E> tailSet(E fromElement, boolean inclusive);
 
-public SortedSet<E> subSet(E fromElement,
-                           E toElement);
+public SortedSet<E> subSet(E fromElement, E toElement);
 
 public SortedSet<E> headSet(E toElement);
 

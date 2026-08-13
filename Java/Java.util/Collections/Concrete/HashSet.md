@@ -1,4 +1,8 @@
-From `java.util.HashSet<E>`: 
+### Inherited from parent (not redeclared here)
+
+```java
+void forEach(Consumer<? super T> action);  // Declared in "Iterable", Inheriting from "Iterable"
+```
 
 ### Constructors
 
@@ -33,9 +37,9 @@ public boolean contains(Object o);
 ### Iteration
 
 ```java
-public Iterator<E> iterator();
+public Iterator<E> iterator();  // Iterable
 
-public Spliterator<E> spliterator();
+public Spliterator<E> spliterator(); // Iterable
 ```
 
  
@@ -91,7 +95,7 @@ public static <T> HashSet<T> newHashSet(int numElements);
 ### Complete Public Method List (excluding constructors)
 
 ```java
-public Iterator<E> iterator();
+public Iterator<E> iterator();  // Iterable
 
 public int size();
 
@@ -107,7 +111,7 @@ public void clear();
 
 public Object clone();
 
-public Spliterator<E> spliterator();
+public Spliterator<E> spliterator();  // Iterable
 
 public Object[] toArray();
 

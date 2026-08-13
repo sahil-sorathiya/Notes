@@ -1,3 +1,7 @@
+### Inherits
+
+All Methods of Vector
+
 ### Constructors
 
 ```java

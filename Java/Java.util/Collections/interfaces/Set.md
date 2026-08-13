@@ -1,6 +1,25 @@
-From `java.util.Set<E>` interface, the public methods are: 
+## Inherited from Parent (not redeclared here)
 
----
+```java
+// Declared in "Iterable", Inheriting from "Iterable"
+void forEach(Consumer<? super T> action);
+
+// Declared in "Collection", Inheriting from "Collection"
+<T> T[] toArray(IntFunction<T[]> generator);
+boolean removeIf(Predicate<? super E> filter);
+Stream<E> stream();
+Stream<E> parallelStream();
+```
+
+## `Iterable` Methods
+
+```java
+Iterator<E> iterator();  // Iterable
+
+Spliterator<E> spliterator(); // Iterable
+```
+
+## `Collection` Methods
 
 ### Query Operations
 
@@ -11,14 +30,10 @@ boolean isEmpty();
 
 boolean contains(Object o);
 
-Iterator<E> iterator();
-
 Object[] toArray();
 
 <T> T[] toArray(T[] a);
 ```
-
----
 
 ### Modification Operations
 
@@ -27,8 +42,6 @@ boolean add(E e);
 
 boolean remove(Object o);
 ```
-
----
 
 ### Bulk Operations
 
@@ -44,8 +57,6 @@ boolean removeAll(Collection<?> c);
 void clear();
 ```
 
----
-
 ### Equality & Hashing
 
 ```java
@@ -54,15 +65,9 @@ boolean equals(Object o);
 int hashCode();
 ```
 
----
 
-### Default Methods
 
-```java
-default Spliterator<E> spliterator();
-```
-
----
+## Declared Directly in `Set`
 
 ### Static Factory Methods
 
@@ -96,15 +101,3 @@ static <E> Set<E> of(E... elements);
 static <E> Set<E> copyOf(Collection<? extends E> coll);
 ```
 
-### Summary
-
-* **Inherited from `Collection`**: all instance methods except the static factories and `spliterator()` redeclaration.
-* **Declared directly in `Set`**:
-
-  ```java
-  default Spliterator<E> spliterator();
-
-  static <E> Set<E> of(...);   // 12 overloads including varargs
-
-  static <E> Set<E> copyOf(Collection<? extends E> coll);
-  ```

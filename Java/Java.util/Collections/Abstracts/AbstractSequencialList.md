@@ -1,21 +1,8 @@
-### Public Methods in `AbstractSequentialList<E>`
-
-Source: `java.util.AbstractSequentialList` 
+### Inherited from parent (not redeclared here)
 
 ```java
-public E get(int index);
-
-public E set(int index, E element);
-
-public void add(int index, E element);
-
-public E remove(int index);
-
-public boolean addAll(int index, Collection<? extends E> c);
-
-public Iterator<E> iterator();
-
-public abstract ListIterator<E> listIterator(int index);
+void forEach(Consumer<? super T> action);  // Declared in "Iterable", Inheriting from "Iterable"
+Spliterator<T> spliterator();  // Declared in "Iterable", Inheriting from "Collection"
 ```
 
 ---
@@ -33,7 +20,7 @@ public E remove(int index);
 
 public boolean addAll(int index, Collection<? extends E> c);
 
-public Iterator<E> iterator();
+public Iterator<E> iterator();  // Iterable
 ```
 
 ---
