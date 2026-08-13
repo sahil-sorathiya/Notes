@@ -170,20 +170,19 @@
 # 5. Collections Framework
 
 ### List
-- ArrayList
-- LinkedList
-- Vector
+- ArrayList ✅
+- LinkedList ✅
+- Vector ✅
 - Stack
 
 ### Set
-- HashSet
-- LinkedHashSet
-- TreeSet
+- HashSet ✅
+- LinkedHashSet ✅
+- TreeSet ✅
 
 ### Queue
-- PriorityQueue
-- Deque
-- ArrayDeque
+- PriorityQueue ✅
+- ArrayDeque ✅
 
 ### Map
 - HashMap
