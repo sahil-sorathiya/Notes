@@ -1,91 +1,71 @@
-### Inherited from parent (not redeclared here)
+### Inherited from Parent (not redeclared here)
 
 ```java
-void forEach(Consumer<? super T> action);  // Declared in "Iterable", Inheriting from "Iterable"
-Spliterator<T> spliterator();  // Declared in "Iterable", Inheriting from "Collection"
+// Declared in "Object" & "Collection", Inheriting from "Object"
+boolean equals(Object o);
+int hashCode();
+
+// Declared in "Iterable", Inheriting from "Iterable"
+default void forEach(Consumer<? super T> action);
+
+// Declared in "Iterable", Inheriting from "Collection"
+default Spliterator<T> spliterator();
+
+// Declared in "Collection", Inheriting from "Collection"
+default <T> T[] toArray(IntFunction<T[]> generator);
+default boolean removeIf(Predicate<? super E> filter);
+default Stream<E> stream();
+default Stream<E> parallelStream();
 ```
 
-### Abstract Methods
+## `Object` Methods
 
 ```java
-public abstract Iterator<E> iterator();  // Iterable
-
-public abstract int size();
+String toString();
 ```
 
----
+## `Iterable` Methods
+
+```java
+abstract Iterator<E> iterator();  // Iterable
+```
+
+## `Collection` Methods
 
 ### Query Operations
 
 ```java
-public boolean isEmpty();
+abstract int size();
 
-public boolean contains(Object o);
+boolean isEmpty();
 
-public Object[] toArray();
+boolean contains(Object o);
 
-public <T> T[] toArray(T[] a);
+Object[] toArray();
+
+<T> T[] toArray(T[] a);
 ```
-
----
 
 ### Modification Operations
 
 ```java
-public boolean add(E e);
+boolean add(E e);
 
-public boolean remove(Object o);
+boolean remove(Object o);
 ```
-
----
 
 ### Bulk Operations
 
 ```java
-public boolean containsAll(Collection<?> c);
+boolean containsAll(Collection<?> c);
 
-public boolean addAll(Collection<? extends E> c);
+boolean addAll(Collection<? extends E> c);
 
-public boolean removeAll(Collection<?> c);
+boolean removeAll(Collection<?> c);
 
-public boolean retainAll(Collection<?> c);
+boolean retainAll(Collection<?> c);
 
-public void clear();
+void clear();
 ```
 
----
-
-### Object Methods Overridden
-
-```java
-public String toString();
-```
-
----
-
-### Summary
-
-| Method                            | Return Type   |
-| --------------------------------- | ------------- |
-| `iterator()`                      | `Iterator<E>` |
-| `size()`                          | `int`         |
-| `isEmpty()`                       | `boolean`     |
-| `contains(Object)`                | `boolean`     |
-| `toArray()`                       | `Object[]`    |
-| `toArray(T[])`                    | `T[]`         |
-| `add(E)`                          | `boolean`     |
-| `remove(Object)`                  | `boolean`     |
-| `containsAll(Collection<?>)`      | `boolean`     |
-| `addAll(Collection<? extends E>)` | `boolean`     |
-| `removeAll(Collection<?>)`        | `boolean`     |
-| `retainAll(Collection<?>)`        | `boolean`     |
-| `clear()`                         | `void`        |
-| `toString()`                      | `String`      |
-
-**Total public methods declared:** **14** 
-
-**Abstract methods:** 2 (`iterator`, `size`) 
-
-**Concrete methods:** 12  
-
-Note that methods such as `removeIf()`, `stream()`, `parallelStream()`, `spliterator()`, `forEach()`, etc., are **not declared in `AbstractCollection`**. They are inherited as default methods from `Collection` and `Iterable`.
+## `AbstractCollection` class do not have its own methods.

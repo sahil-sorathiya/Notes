@@ -1,140 +1,143 @@
-### Inherited from parent (not redeclared here)
+## Inherited from parent (not redeclared here)
 
 ```java
-void forEach(Consumer<? super T> action);  // Declared in "Iterable", Inheriting from "Iterable"
+// Declared in "Object" & "Collection", Inheriting from "Object"
+boolean equals(Object o);
+int hashCode();
+
+// Declared in "Object", Inheriting from "AbstractCollection"
+String toString();
+
+// Declared in "Iterable", Inheriting from "Iterable"
+default void forEach(Consumer<? super T> action);
+
+// Declared in "Collection", Inheriting from "Collection"
+default <T> T[] toArray(IntFunction<T[]> generator);
+default Stream<E> stream();
+default Stream<E> parallelStream();
+
+// Declared in "Collection", Inheriting from "AbstractCollection"
+boolean containsAll(Collection<?> c);
+boolean addAll(Collection<? extends E> c);
+
+//seqcol
+default Deque<E> reversed();
 ```
 
-### Constructors
+## Constructors
 
 ```java
-public ArrayDeque();
+ArrayDeque();
 
-public ArrayDeque(int numElements);
+ArrayDeque(int numElements);
 
-public ArrayDeque(Collection<? extends E> c);
+ArrayDeque(Collection<? extends E> c);
 ```
 
----
-
-### Deque Operations
+## `Object` Methods
 
 ```java
-public void addFirst(E e);
-
-public void addLast(E e);
-
-public boolean offerFirst(E e);
-
-public boolean offerLast(E e);
-
-public E removeFirst();
-
-public E removeLast();
-
-public E pollFirst();
-
-public E pollLast();
-
-public E getFirst();
-
-public E getLast();
-
-public E peekFirst();
-
-public E peekLast();
-
-public boolean removeFirstOccurrence(Object o);
-
-public boolean removeLastOccurrence(Object o);
-
-public Iterator<E> descendingIterator();
+ArrayDeque<E> clone();
 ```
 
----
-
-### Queue Operations
+## `Iterable` Methods
 
 ```java
-public boolean add(E e);
+Iterator<E> iterator();  // Iterable
 
-public boolean offer(E e);
-
-public E remove();
-
-public E poll();
-
-public E element();
-
-public E peek();
+Spliterator<E> spliterator(); // Iterable
 ```
 
----
+## `Collection` Methods
 
-### Stack Operations
+### Query Operations
 
 ```java
-public void push(E e);
+int size();
 
-public E pop();
+boolean isEmpty();
+
+boolean contains(Object o);
+
+Object[] toArray();
+
+<T> T[] toArray(T[] a);
 ```
 
----
-
-### Iterator Operations
+### Modification Operations
 
 ```java
-public Iterator<E> iterator();  // Iterable
+boolean add(E e);
 
-public Spliterator<E> spliterator(); // Iterable
+boolean remove(Object o);
 ```
 
-
----
-
-### Collection Operations
+### Bulk Operations
 
 ```java
-public int size();
+boolean removeAll(Collection<?> c);
 
-public boolean isEmpty();
+default boolean removeIf(Predicate<? super E> filter);
 
-public boolean removeIf(Predicate<? super E> filter);
+boolean retainAll(Collection<?> c);
 
-public boolean removeAll(Collection<?> c);
-
-public boolean retainAll(Collection<?> c);
-
-public boolean contains(Object o);
-
-public boolean remove(Object o);
-
-public void clear();
-
-public Object[] toArray();
-
-public <T> T[] toArray(T[] a);
+void clear();
 ```
 
----
-
-### Object Methods
+## `SequencedCollection` Methods
 
 ```java
-public ArrayDeque<E> clone();
+void addFirst(E e);
+
+void addLast(E e);
+
+E getFirst();
+
+E getLast();
+
+E removeFirst();
+
+E removeLast();
 ```
 
----
+## `Queue` Methods
 
-### Summary
+```java
+boolean offer(E e);
 
-| Category                                          |  Count |
-| ------------------------------------------------- | -----: |
-| Constructors                                      |      3 |
-| Deque methods                                     |     15 |
-| Queue methods                                     |      6 |
-| Stack methods                                     |      2 |
-| Iterator methods                                  |      2 |
-| Collection methods                                |     11 |
-| Object methods                                    |      1 |
-| **Total (including constructors)**                | **40** |
-| **Total public methods (excluding constructors)** | **37** |
+E remove();
+
+E poll();
+
+E element();
+
+E peek();
+```
+
+
+## `Deque` Methods
+
+```java
+
+boolean offerFirst(E e);
+
+boolean offerLast(E e);
+
+E pollFirst();
+
+E pollLast();
+
+E peekFirst();
+
+E peekLast();
+
+boolean removeFirstOccurrence(Object o);
+
+boolean removeLastOccurrence(Object o);
+
+void push(E e);
+
+E pop();
+
+Iterator<E> descendingIterator();
+```

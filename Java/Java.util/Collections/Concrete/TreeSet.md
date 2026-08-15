@@ -1,10 +1,44 @@
-### Inherited from parent (not redeclared here)
+## Inherited from Parent (not redeclared here)
 
 ```java
-void forEach(Consumer<? super T> action);  // Declared in "Iterable", Inheriting from "Iterable"
+// Declared in "Object" & "Collection", Inheriting from "AbstractSet"
+boolean equals(Object o);
+int hashCode();
+
+// Declared in "Object", Inheriting from "AbstractCollection"
+public String toString();
+
+// Declared in "Iterable", Inheriting from "Iterable"
+default void forEach(Consumer<? super T> action);
+
+// Declared in "Collection", Inheriting from "Collection"
+default <T> T[] toArray(IntFunction<T[]> generator);        
+default boolean removeIf(Predicate<? super E> filter);
+default Stream<E> stream();
+default Stream<E> parallelStream();
+
+// Declared in "Collection", Inheriting from "AbstractCollection"
+Object[] toArray();
+<T> T[] toArray(T[] a);
+boolean containsAll(Collection<?> c);
+boolean retainAll(Collection<?> c);
+
+// Declared in "Collection", Inheriting from "AbstractSet"
+boolean removeAll(Collection<?> c);
+
+// Declared in "Set", Inheriting from "Set"
+static <E> Set<E> of(E... elements);
+static <E> Set<E> copyOf(Collection<? extends E> coll);
+
+// Declared in "SequencedCollection", Inheriting from "NavigableSet"
+default NavigableSet<E> reversed();
+default E getFirst()
+default E getLast()
+default E removeFirst()
+default E removeLast()
 ```
 
-### Constructors
+## Constructors
 
 ```java
 public TreeSet();
@@ -16,21 +50,21 @@ public TreeSet(Collection<? extends E> c);
 public TreeSet(SortedSet<E> s);
 ```
 
----
+## `Object` Methods
 
-### Iteration & Views
+```java
+public Object clone();
+```
+
+## `Iterable` Methods
 
 ```java
 public Iterator<E> iterator();  // Iterable
 
 public Spliterator<E> spliterator();  // Iterable
-
-public Iterator<E> descendingIterator();
-
-public NavigableSet<E> descendingSet();
 ```
 
----
+## `Collection` Methods
 
 ### Query Operations
 
@@ -40,15 +74,7 @@ public int size();
 public boolean isEmpty();
 
 public boolean contains(Object o);
-
-public Comparator<? super E> comparator();
-
-public E first();
-
-public E last();
 ```
-
----
 
 ### Modification Operations
 
@@ -56,126 +82,76 @@ public E last();
 public boolean add(E e);
 
 public boolean remove(Object o);
-
-public void clear();
-
-public boolean addAll(Collection<? extends E> c);
 ```
 
----
-
-### NavigableSet Operations
+### Bulk Operations
 
 ```java
-public E lower(E e);
-
-public E floor(E e);
-
-public E ceiling(E e);
-
-public E higher(E e);
-
-public E pollFirst();
-
-public E pollLast();
-```
-
----
-
-### Range Views
-
-```java
-public NavigableSet<E> subSet(E fromElement, boolean fromInclusive, E toElement, boolean toInclusive);
-
-public NavigableSet<E> headSet(E toElement, boolean inclusive);
-
-public NavigableSet<E> tailSet(E fromElement, boolean inclusive);
-
-public SortedSet<E> subSet(E fromElement, E toElement);
-
-public SortedSet<E> headSet(E toElement);
-
-public SortedSet<E> tailSet(E fromElement);
-```
-
----
-
-### SequencedSet Operations (Java 21+)
-
-```java
-public void addFirst(E e);
-
-public void addLast(E e);
-```
-
----
-
-### Object Methods
-
-```java
-public Object clone();
-```
-
----
-
-### Complete Public Method List (excluding constructors)
-
-```java
-public Iterator<E> iterator();  // Iterable
-
-public Iterator<E> descendingIterator();
-
-public NavigableSet<E> descendingSet();
-
-public int size();
-
-public boolean isEmpty();
-
-public boolean contains(Object o);
-
-public boolean add(E e);
-
-public boolean remove(Object o);
-
-public void clear();
-
 public boolean addAll(Collection<? extends E> c);
 
-public NavigableSet<E> subSet(E fromElement, boolean fromInclusive, E toElement, boolean toInclusive);
+public void clear();
+```
 
-public NavigableSet<E> headSet(E toElement, boolean inclusive);
+## `SequenceCollection` Methods
+```java
+default void addFirst(E e)
 
-public NavigableSet<E> tailSet(E fromElement, boolean inclusive);
+default void addLast(E e)
+```
 
-public SortedSet<E> subSet(E fromElement, E toElement);
+## `SortedSet` Methods
+```java
+Comparator<? super E> comparator();
 
-public SortedSet<E> headSet(E toElement);
+SortedSet<E> subSet(E fromElement, E toElement);
 
-public SortedSet<E> tailSet(E fromElement);
+SortedSet<E> headSet(E toElement);
 
-public Comparator<? super E> comparator();
+SortedSet<E> tailSet(E fromElement);
 
-public E first();
+E first();
 
-public E last();
+E last();
+```
 
-public E lower(E e);
 
-public E floor(E e);
+## `NavigableSet` Methods
 
-public E ceiling(E e);
+### Navigation Operations
 
-public E higher(E e);
+```java
+E lower(E e);
 
-public E pollFirst();
+E floor(E e);
 
-public E pollLast();
+E ceiling(E e);
 
-public void addFirst(E e);
+E higher(E e);
+```
 
-public void addLast(E e);
+### Endpoint Operations
 
-public Object clone();
+```java
+E pollFirst();
 
-public Spliterator<E> spliterator();
+E pollLast();
+```
+
+### Iteration & Views
+
+```java
+NavigableSet<E> descendingSet();
+
+Iterator<E> descendingIterator();
+```
+
+
+### Range View Operations
+
+```java
+NavigableSet<E> subSet(E fromElement, boolean fromInclusive, E toElement, boolean toInclusive);
+
+NavigableSet<E> headSet(E toElement, boolean inclusive);
+
+NavigableSet<E> tailSet(E fromElemen boolean inclusive);
 ```

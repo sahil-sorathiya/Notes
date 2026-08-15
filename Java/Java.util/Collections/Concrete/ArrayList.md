@@ -1,12 +1,26 @@
-### Inherited from parent (not redeclared here)
+## Inherited from Parent (not redeclared here)
 
 ```java
+// Declared in "Object", Inherited from "AbstractCollection"
+String toString();
 
+// Declared in "Collection", Inherited from "Collection"
+default <T> T[] toArray(IntFunction<T[]> generator);
+default Stream<E> stream();
+default Stream<E> parallelStream();
+
+// Declared in "Collection", Inherited from "AbstractCollection"
+boolean containsAll(Collection<?> c);
+
+// Declared in "SequencedCollection", Inherited from "List"
+default SequencedCollection<E> reversed();
+
+// Declared in "List", Inherited from "List"
+static <E> List<E> of(E... elements);
+static <E> List<E> copyOf(Collection<? extends E> coll);
 ```
 
-
-
-### Public constructors
+## Constructors
 
 ```java
 ArrayList(int initialCapacity)
@@ -14,72 +28,135 @@ ArrayList()
 ArrayList(Collection<? extends E> c)
 ```
 
-### Public methods
+## `Object` Methods
 
 ```java
-void trimToSize()
-void ensureCapacity(int minCapacity)
-
-int size()  // Collection
-boolean isEmpty()  // Collection
-boolean contains(Object o)  // Collection
-
-int indexOf(Object o)
-int lastIndexOf(Object o)
-
 Object clone()
+```
 
-Object[] toArray()
-<T> T[] toArray(T[] a)
+## `Iterable` Methods
 
-E get(int index)
-E getFirst()
-E getLast()
-
-E set(int index, E element)
-
-boolean add(E e)
-void add(int index, E element)
-void addFirst(E element)
-void addLast(E element)
-
-E remove(int index)
-boolean remove(Object o)
-E removeFirst()
-E removeLast()
-
-boolean equals(Object o)
-int hashCode()
-
-void clear()
-
-boolean addAll(Collection<? extends E> c)
-boolean addAll(int index, Collection<? extends E> c)
-
-boolean removeAll(Collection<?> c)
-boolean retainAll(Collection<?> c)
-
-ListIterator<E> listIterator(int index)
-ListIterator<E> listIterator()
-
+```java
 Iterator<E> iterator()  // Iterable
 
-List<E> subList(int fromIndex, int toIndex)
-
-void forEach(Consumer<? super E> action)  // Iterable
+default void forEach(Consumer<? super E> action)  // Iterable
 
 Spliterator<E> spliterator()  // Iterable
+```
 
-boolean removeIf(Predicate<? super E> filter)
+## `Collection` Methods
+
+### Query Operations
+
+```java
+int size();
+
+boolean isEmpty();
+
+boolean contains(Object o);
+
+Object[] toArray();
+
+<T> T[] toArray(T[] a);
+```
+
+
+### Modification Operations
+
+```java
+boolean add(E e);
+
+boolean remove(Object o);
+```
+
+### Bulk Operations
+
+```java
+boolean addAll(Collection<? extends E> c);
+
+boolean removeAll(Collection<?> c);
+
+default boolean removeIf(Predicate<? super E> filter);
+
+boolean retainAll(Collection<?> c);
+
+void clear();
+```
+
+### 'Object' Methods
+
+```java
+boolean equals(Object o);
+
+int hashCode();
+```
+
+## `SequencedCollection` Methods
+```java
+default void addFirst(E e)
+
+default void addLast(E e)
+
+default E getFirst()
+
+default E getLast()
+
+default E removeFirst()
+
+default E removeLast()
+```
+
+## `List` Methods
+
+### Positional Access
+
+```java
+abstract E get(int index);
+
+E set(int index, E element);
+
+void add(int index, E element);
+
+E remove(int index);
+```
+
+### Bulk Operations
+
+```java
+boolean addAll(int index, Collection<? extends E> c);
 
 void replaceAll(UnaryOperator<E> operator)
 
 void sort(Comparator<? super E> c)
 ```
 
-### Protected methods
+### Search Operations
 
 ```java
-void removeRange(int fromIndex, int toIndex)
+int indexOf(Object o);
+
+int lastIndexOf(Object o);
+```
+
+### Iterators
+
+```java
+ListIterator<E> listIterator();
+
+ListIterator<E> listIterator(int index);
+```
+
+### Views
+
+```java
+List<E> subList(int fromIndex, int toIndex);
+```
+
+
+## Declared Directly in `ArrayList`
+
+```java
+void trimToSize()
+void ensureCapacity(int minCapacity)
 ```
 

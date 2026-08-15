@@ -2,25 +2,27 @@
 
 ```java
 // Declared in "Iterable", Inheriting from "Iterable"
-void forEach(Consumer<? super T> action);
+default void forEach(Consumer<? super T> action);
 
 // Declared in "Iterable", Inheriting from "Collection"
-Spliterator<T> spliterator();
+default Spliterator<T> spliterator();
 
 // Declared in "Collection", Inheriting from "Collection"
+default <T> T[] toArray(IntFunction<T[]> generator);
+default boolean removeIf(Predicate<? super E> filter);
+default Stream<E> stream();
+default Stream<E> parallelStream();
 boolean isEmpty();
 Object[] toArray();
 <T> T[] toArray(T[] a);
-default <T> T[] toArray(IntFunction<T[]> generator);
 boolean containsAll(Collection<?> c);
 boolean removeAll(Collection<?> c);
-default boolean removeIf(Predicate<? super E> filter);
 boolean retainAll(Collection<?> c);
 void clear();
 boolean equals(Object o);
 int hashCode();
-default Stream<E> stream();
-default Stream<E> parallelStream();
+boolean equals(Object o);
+int hashCode();
 ```
 
 ## `Iterable` Methods
@@ -85,7 +87,7 @@ E element();
 E peek();
 ```
 
-### Declared Directly in `Deque<E>`
+### Declared Directly in `Deque`
 
 ```java
 boolean offerFirst(E e);

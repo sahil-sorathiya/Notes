@@ -1,45 +1,55 @@
-### Inherited from parent (not redeclared here)
+### Inherited from Parent (not redeclared here)
 
 ```java
-Iterator<E> iterator(); // Declared in "Iterable", Inheriting from "AbstractCollection"
-void forEach(Consumer<? super T> action);  // Declared in "Iterable", Inheriting from "Iterable"
-Spliterator<T> spliterator();  // Declared in "Iterable", Inheriting from "Collection"
+// Declared in "Object", Inheriting from "AbstractCollection"
+public String toString();
+
+// Declared in "Iterable", Inheriting from "AbstractCollection"
+Iterator<E> iterator();
+
+// Declared in "Iterable", Inheriting from "Iterable"
+default void forEach(Consumer<? super T> action);
+
+// Declared in "Iterable", Inheriting from "Collection"
+default Spliterator<T> spliterator();  
+
+// Declared in "Collection", Inheriting from "Collection"
+default <T> T[] toArray(IntFunction<T[]> generator);
+default boolean removeIf(Predicate<? super E> filter);
+default Stream<E> stream();
+default Stream<E> parallelStream();
+
+// Declared in "Collection", Inheriting from "AbstractCollection"
+abstract int size();
+boolean isEmpty();
+boolean contains(Object o);
+Object[] toArray();
+<T> T[] toArray(T[] a);
+boolean add(E e);
+boolean remove(Object o);
+boolean containsAll(Collection<?> c);
+boolean addAll(Collection<? extends E> c);
+boolean retainAll(Collection<?> c);
+void clear();
+
+// Declared in "Set", Inheriting from "Set"
+static <E> Set<E> of(E... elements);
+static <E> Set<E> copyOf(Collection<? extends E> coll);
 ```
 
-### Equality & Hashing
+## `Collection` Methods
+
+### 'Object' Methods
 
 ```java
-public boolean equals(Object o);
+boolean equals(Object o);
 
-public int hashCode();
+int hashCode();
 ```
-
----
 
 ### Bulk Operations
 
 ```java
-public boolean removeAll(Collection<?> c);
+boolean removeAll(Collection<?> c);
 ```
-
----
-
-### Summary
-
-`AbstractSet<E>` declares only these three public methods:
-
-```java
-public boolean equals(Object o);
-
-public int hashCode();
-
-public boolean removeAll(Collection<?> c);
-```
-
-All other public methods (`size`, `iterator`, `add`, `contains`, `clear`, `toArray`, etc.) are inherited from `AbstractCollection` and/or implemented by concrete subclasses. The constructor is:
-
-```java
-protected AbstractSet();
-```
-
-which is **not public**.
+## `AbstractSet` class do not have its own methods.

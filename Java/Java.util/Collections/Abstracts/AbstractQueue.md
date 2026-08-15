@@ -1,53 +1,67 @@
-### Inherited from parent (not redeclared here)
+### Inherited from Parent (not redeclared here)
 
 ```java
-Iterator<E> iterator(); // Declared in "Iterable", Inheriting from "AbstractCollection"
-void forEach(Consumer<? super T> action);  // Declared in "Iterable", Inheriting from "Iterable"
-Spliterator<T> spliterator();  // Declared in "Iterable", Inheriting from "Collection"
-```
+// Declared in "Object" & "Collection", Inheriting from "Object"
+boolean equals(Object o);
+int hashCode();
 
-### Public Methods
+// Declared in "Object", Inheriting from "AbstractCollection"
+String toString();
 
-```java
-public boolean add(E e);
+// Declared in "Iterable", Inheriting from "AbstractCollection"
+Iterator<E> iterator();
 
-public E remove();
+// Declared in "Iterable", Inheriting from "Iterable"
+default void forEach(Consumer<? super T> action);
 
-public E element();
+// Declared in "Iterable", Inheriting from "Collection"
+default Spliterator<T> spliterator();
 
-public void clear();
+// Declared in "Collection", Inheriting from "Collection"
+default <T> T[] toArray(IntFunction<T[]> generator);
+default boolean removeIf(Predicate<? super E> filter);
+default Stream<E> stream();
+default Stream<E> parallelStream();
 
-public boolean addAll(Collection<? extends E> c);
-```
+// Declared in "Collection", Inheriting from "AbstractCollection"
+abstract int size();
+boolean isEmpty();
+boolean contains(Object o);
+Object[] toArray();
+<T> T[] toArray(T[] a);
+boolean remove(Object o);
+boolean containsAll(Collection<?> c);
+boolean removeAll(Collection<?> c);
+boolean retainAll(Collection<?> c);
 
----
-
-### Constructors
-
-```java
-protected AbstractQueue();
-```
-
----
-
-### Notes
-
-`AbstractQueue<E>` introduces only **5 public methods** of its own:
-
-* `add(E e)`
-* `remove()`
-* `element()`
-* `clear()`
-* `addAll(Collection<? extends E> c)`
-
-The following `Queue` methods are **not implemented here** and remain abstract/inherited from the `Queue` interface:
-
-```java
+// Declared in "Queue", Not defined yet anywhere
 boolean offer(E e);
-
 E poll();
-
 E peek();
 ```
 
-Subclasses (such as `PriorityQueue`, `ArrayDeque`, etc.) must provide implementations for those methods, along with `size()` and `iterator()`.
+## `Collection` Methods
+
+### Modification Operations
+
+```java
+boolean add(E e);
+```
+
+### Bulk Operations
+
+```java
+boolean addAll(Collection<? extends E> c);
+
+void clear();
+```
+
+## `Queue` Methods
+
+```java
+E remove();
+
+E element();
+```
+
+## `AbstractQueue` class do not have its own methods.

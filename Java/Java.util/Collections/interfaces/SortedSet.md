@@ -2,16 +2,16 @@
 
 ```java
 // Declared in "Iterable", Inheriting from "Iterable"
-void forEach(Consumer<? super T> action);
+default void forEach(Consumer<? super T> action);
 
 // Declared in "Iterable", Inheriting from "Set"
 Iterator<E> iterator();
 
 // Declared in "Collection", Inheriting from "Collection"
-<T> T[] toArray(IntFunction<T[]> generator);
-boolean removeIf(Predicate<? super E> filter);
-Stream<E> stream();
-Stream<E> parallelStream();
+default <T> T[] toArray(IntFunction<T[]> generator);
+default boolean removeIf(Predicate<? super E> filter);
+default Stream<E> stream();
+default Stream<E> parallelStream();
 
 // Declared in "Collection", Inheriting from "Set"
 int size();

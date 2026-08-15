@@ -1,96 +1,105 @@
-### Inherited from parent (not redeclared here)
+## Inherited from parent (not redeclared here)
 
 ```java
+// Declared in "Object" & "Collection", Inheriting from "Object"
+boolean equals(Object o);
+int hashCode();
 
+// Declared in "Collection" , Inherited from "Collection"
+default <T> T[] toArray(IntFunction<T[]> generator);
+default Stream<E> stream();
+default Stream<E> parallelStream();
+
+// Declared in "Collection", Inheriting from "AbstractCollection"
+boolean isEmpty();
+boolean containsAll(Collection<?> c);
+
+// Declared in "Collection", Inheriting from "AbstractQueue"
+boolean addAll(Collection<? extends E> c);
+
+// Declared in "Queue", Inheriting from "AbstractQueue"
+E element();
+E remove();
 ```
 
 ### Constructors
 
 ```java
-public PriorityQueue();
+PriorityQueue();
 
-public PriorityQueue(int initialCapacity);
+PriorityQueue(int initialCapacity);
 
-public PriorityQueue(Comparator<? super E> comparator);
+PriorityQueue(Comparator<? super E> comparator);
 
-public PriorityQueue(int initialCapacity,
+PriorityQueue(int initialCapacity,
                      Comparator<? super E> comparator);
 
-public PriorityQueue(Collection<? extends E> c);
+PriorityQueue(Collection<? extends E> c);
 
-public PriorityQueue(PriorityQueue<? extends E> c);
+PriorityQueue(PriorityQueue<? extends E> c);
 
-public PriorityQueue(SortedSet<? extends E> c);
+PriorityQueue(SortedSet<? extends E> c);
 ```
 
----
-
-### Queue Operations
+## `Iterable` Methods
 
 ```java
-public boolean add(E e);
-
-public boolean offer(E e);
-
-public E peek();
-
-public E poll();
+Iterator<E> iterator();  // Iterable
+final Spliterator<E> spliterator();  // Iterable
+default void forEach(Consumer<? super E> action);  // Iterable
 ```
 
----
+## `Collection` Methods
 
-### Collection Operations
+### Query Operations
 
 ```java
-public boolean remove(Object o);
+int size();
 
-public boolean contains(Object o);
+boolean contains(Object o);
 
-public Object[] toArray();
+Object[] toArray();
 
-public <T> T[] toArray(T[] a);
+<T> T[] toArray(T[] a);
 
-public int size();
-
-public void clear();
 ```
 
----
-
-### Ordering
+### Modification Operations
 
 ```java
-public Comparator<? super E> comparator();
+boolean add(E e);
+
+boolean remove(Object o);
 ```
-
----
-
-### Iterator Operations
-
-```java
-public Iterator<E> iterator();  // Iterable
-public final Spliterator<E> spliterator();  // Iterable
-public void forEach(Consumer<? super E> action);  // Iterable
-```
-
----
 
 ### Bulk Operations
 
 ```java
-public boolean removeIf(Predicate<? super E> filter);
+boolean removeAll(Collection<?> c);
 
-public boolean removeAll(Collection<?> c);
+default boolean removeIf(Predicate<? super E> filter);
 
-public boolean retainAll(Collection<?> c);
+boolean retainAll(Collection<?> c);
+
+void clear();
 ```
 
 ---
 
-### Summary
+## `Queue` Methods
 
-* Constructors: **7**
-* Public methods: **17**
-* Total public members (including constructors): **24**
+```java
+boolean offer(E e);
 
-Source: `java.util.PriorityQueue<E>` 
+E peek();
+
+E poll();
+```
+
+## Declared Directly in `PriorityQueue`
+
+```java
+Comparator<? super E> comparator();
+```
+
+

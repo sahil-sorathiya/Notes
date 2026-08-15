@@ -1,7 +1,8 @@
 ## Inherited from Parent (not redeclared here)
 
 ```java
-void forEach(Consumer<? super T> action);  // Declared in "Iterable", Inheriting from "Iterable"
+// Declared in "Iterable", Inheriting from "Iterable"
+default void forEach(Consumer<? super T> action);
 ```
 
 ## `Iterable` Methods
@@ -9,7 +10,7 @@ void forEach(Consumer<? super T> action);  // Declared in "Iterable", Inheriting
 ```java
 public Iterator<E> iterator();  // Iterable
 
-public Spliterator<E> spliterator(); // Iterable
+default public Spliterator<E> spliterator(); // Iterable
 ```
 
 ## Declared Directly in `Collection`
@@ -54,20 +55,20 @@ boolean retainAll(Collection<?> c);
 void clear();
 ```
 
-### Comparison & Hashing
-
-```java
-boolean equals(Object o);
-
-int hashCode();
-```
-
 ### Traversal & Streams
 
 ```java
 default Stream<E> stream();
 
 default Stream<E> parallelStream();
+```
+
+### 'Object' Methods
+
+```java
+boolean equals(Object o);
+
+int hashCode();
 ```
 
 ### Count

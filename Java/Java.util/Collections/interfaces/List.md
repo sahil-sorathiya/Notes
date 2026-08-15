@@ -2,13 +2,13 @@
 
 ```java
 // Declared in "Iterable", Inheriting from "Iterable"
-void forEach(Consumer<? super T> action);
+default void forEach(Consumer<? super T> action);
 
 // Declared in "Collection", Inheriting from "Collection"
-<T> T[] toArray(IntFunction<T[]> generator);
-boolean removeIf(Predicate<? super E> filter);
-Stream<E> stream();
-Stream<E> parallelStream();
+default <T> T[] toArray(IntFunction<T[]> generator);
+default boolean removeIf(Predicate<? super E> filter);
+default Stream<E> stream();
+default Stream<E> parallelStream();
 ```
 
 ## `Iterable` Methods
@@ -56,7 +56,7 @@ boolean retainAll(Collection<?> c);
 void clear();
 ```
 
-### Comparison & Hashing
+### 'Object' Methods
 
 ```java
 boolean equals(Object o);
@@ -95,6 +95,7 @@ void add(int index, E element);
 
 E remove(int index);
 ```
+
 ### Bulk Operations
 
 ```java

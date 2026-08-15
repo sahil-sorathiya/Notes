@@ -1,123 +1,95 @@
-### Inherited from parent (not redeclared here)
+## Inherited from Parent (not redeclared here)
 
 ```java
-void forEach(Consumer<? super T> action);  // Declared in "Iterable", Inheriting from "Iterable"
+// Declared in "Object" & "Collection", Inheriting from "AbstractSet"
+boolean equals(Object o);
+int hashCode();
+
+// Declared in "Object", Inheriting from "AbstractCollection"
+String toString();
+
+// Declared in "Iterable", Inheriting from "Iterable"
+default void forEach(Consumer<? super T> action);
+
+// Declared in "Collection", Inheriting from "Collection"
+default <T> T[] toArray(IntFunction<T[]> generator);
+default boolean removeIf(Predicate<? super E> filter);
+default Stream<E> stream();
+default Stream<E> parallelStream();
+
+// Declared in "Collection", Inheriting from "AbstractCollection"
+boolean containsAll(Collection<?> c);
+boolean addAll(Collection<? extends E> c);
+boolean retainAll(Collection<?> c);
+
+// Declared in "Collection", Inheriting from "AbstractSet"
+boolean removeAll(Collection<?> c);
+
+// Declared in "Set", Inheriting from "Set"
+static <E> Set<E> of(E... elements);
+static <E> Set<E> copyOf(Collection<? extends E> coll);
+
 ```
 
-### Constructors
+## Constructors
 
 ```java
-public HashSet();
+HashSet();
 
-public HashSet(Collection<? extends E> c);
+HashSet(Collection<? extends E> c);
 
-public HashSet(int initialCapacity, float loadFactor);
+HashSet(int initialCapacity, float loadFactor);
 
-public HashSet(int initialCapacity);
+HashSet(int initialCapacity);
 ```
 
-   
+## `Object` Methods
 
----
+```java
+Object clone();
+```
+
+## `Iterable` Methods
+
+```java
+Iterator<E> iterator();  // Iterable
+
+Spliterator<E> spliterator(); // Iterable
+```
+
+## `Collection` Methods
 
 ### Query Operations
 
 ```java
-public int size();
+int size();
 
-public boolean isEmpty();
+boolean isEmpty();
 
-public boolean contains(Object o);
+boolean contains(Object o);
+
+Object[] toArray();
+
+<T> T[] toArray(T[] a);
 ```
-
-  
-
----
-
-### Iteration
-
-```java
-public Iterator<E> iterator();  // Iterable
-
-public Spliterator<E> spliterator(); // Iterable
-```
-
- 
-
----
 
 ### Modification Operations
 
 ```java
-public boolean add(E e);
+boolean add(E e);
 
-public boolean remove(Object o);
-
-public void clear();
+boolean remove(Object o);
 ```
 
-  
-
----
-
-### Array Conversion
+### Bulk Operations
 
 ```java
-public Object[] toArray();
-
-public <T> T[] toArray(T[] a);
+void clear();
 ```
 
- 
-
----
-
-### Object Methods
+### Declared Directly in `HashSet`
 
 ```java
-public Object clone();
+static <T> HashSet<T> newHashSet(int numElements);
 ```
-
-
-
----
-
-### Static Factory Method
-
-```java
-public static <T> HashSet<T> newHashSet(int numElements);
-```
-
-
-
----
-
-### Complete Public Method List (excluding constructors)
-
-```java
-public Iterator<E> iterator();  // Iterable
-
-public int size();
-
-public boolean isEmpty();
-
-public boolean contains(Object o);
-
-public boolean add(E e);
-
-public boolean remove(Object o);
-
-public void clear();
-
-public Object clone();
-
-public Spliterator<E> spliterator();  // Iterable
-
-public Object[] toArray();
-
-public <T> T[] toArray(T[] a);
-
-public static <T> HashSet<T> newHashSet(int numElements);
-```
-
            

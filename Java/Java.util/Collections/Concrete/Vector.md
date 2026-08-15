@@ -1,10 +1,26 @@
-### Inherited from parent (not redeclared here)
+## Inherited from Parent (not redeclared here)
 
 ```java
+// Declared in "Collection", Inherited from "Collection"
+default <T> T[] toArray(IntFunction<T[]> generator);
+default Stream<E> stream();
+default Stream<E> parallelStream();
 
+// Declared in "SequencedCollection", Inherited from "List"
+default SequencedCollection<E> reversed();
+default void addFirst(E e)
+default void addLast(E e)
+default E getFirst()
+default E getLast()
+default E removeFirst()
+default E removeLast()
+
+// Declared in "List", Inherited from "List"
+static <E> List<E> of(E... elements);
+static <E> List<E> copyOf(Collection<? extends E> coll);
 ```
 
-### Public Constructors
+### Constructors
 
 ```java
 Vector(int initialCapacity, int capacityIncrement)
@@ -13,32 +29,134 @@ Vector()
 Vector(Collection<? extends E> c)
 ```
 
-### Public Methods
+## `Object` Methods
 
 ```java
-void copyInto(Object[] anArray)
+String toString()
+Object clone()
+```
 
+## `Iterable` Methods
+
+```java
+Iterator<E> iterator()  // Iterable
+
+default void forEach(Consumer<? super E> action)  // Iterable
+
+Spliterator<E> spliterator()  // Iterable
+```
+
+## `Collection` Methods
+
+### Query Operations
+
+```java
+int size();
+
+boolean isEmpty();
+
+boolean contains(Object o);
+
+Object[] toArray();
+
+<T> T[] toArray(T[] a);
+```
+
+
+### Modification Operations
+
+```java
+boolean add(E e);
+
+boolean remove(Object o);
+```
+
+### Bulk Operations
+
+```java
+boolean containsAll(Collection<?> c);
+
+boolean addAll(Collection<? extends E> c);
+
+boolean removeAll(Collection<?> c);
+
+default boolean removeIf(Predicate<? super E> filter);
+
+boolean retainAll(Collection<?> c);
+
+void clear();
+```
+
+### 'Object' Methods
+
+```java
+boolean equals(Object o);
+
+int hashCode();
+```
+
+## `List` Methods
+
+### Positional Access
+
+```java
+abstract E get(int index);
+
+E set(int index, E element);
+
+void add(int index, E element);
+
+E remove(int index);
+```
+
+### Bulk Operations
+
+```java
+boolean addAll(int index, Collection<? extends E> c);
+
+void replaceAll(UnaryOperator<E> operator)
+
+void sort(Comparator<? super E> c)
+```
+
+### Search Operations
+
+```java
+int indexOf(Object o);
+
+int lastIndexOf(Object o);
+```
+
+### Iterators
+
+```java
+ListIterator<E> listIterator();
+
+ListIterator<E> listIterator(int index);
+```
+
+### Views
+
+```java
+List<E> subList(int fromIndex, int toIndex);
+```
+
+## Declared Directly in `Vector`
+
+```java
 void trimToSize()
 
 void ensureCapacity(int minCapacity)
 
-void setSize(int newSize)
-
 int capacity()
 
-int size()
+void copyInto(Object[] anArray)
 
-boolean isEmpty()
+void setSize(int newSize)
 
 Enumeration<E> elements()
 
-boolean contains(Object o)
-
-int indexOf(Object o)
-
 int indexOf(Object o, int index)
-
-int lastIndexOf(Object o)
 
 int lastIndexOf(Object o, int index)
 
@@ -59,70 +177,4 @@ void addElement(E obj)
 boolean removeElement(Object obj)
 
 void removeAllElements()
-
-Object clone()
-
-Object[] toArray()
-
-<T> T[] toArray(T[] a)
-
-E get(int index)
-
-E set(int index, E element)
-
-boolean add(E e)
-
-boolean remove(Object o)
-
-void add(int index, E element)
-
-E remove(int index)
-
-void clear()
-
-boolean containsAll(Collection<?> c)
-
-boolean addAll(Collection<? extends E> c)
-
-boolean removeAll(Collection<?> c)
-
-boolean retainAll(Collection<?> c)
-
-boolean removeIf(Predicate<? super E> filter)
-
-boolean addAll(int index, Collection<? extends E> c)
-
-boolean equals(Object o)
-
-int hashCode()
-
-String toString()
-
-List<E> subList(int fromIndex, int toIndex)
-
-ListIterator<E> listIterator(int index)
-
-ListIterator<E> listIterator()
-
-Iterator<E> iterator()  // Iterable
-
-void forEach(Consumer<? super E> action)  // Iterable
-
-Spliterator<E> spliterator()  // Iterable
-
-void replaceAll(UnaryOperator<E> operator)
-
-void sort(Comparator<? super E> c)
 ```
-
-### Protected Methods
-
-```java
-void removeRange(int fromIndex, int toIndex)
-```
-
-Total:
-
-* **4 public constructors**
-* **45 public methods**
-* **1 protected method**  
