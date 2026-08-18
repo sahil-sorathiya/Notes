@@ -21,8 +21,6 @@ boolean retainAll(Collection<?> c);
 void clear();
 boolean equals(Object o);
 int hashCode();
-boolean equals(Object o);
-int hashCode();
 ```
 
 ## `Iterable` Methods

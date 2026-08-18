@@ -43,9 +43,12 @@ default void forEach(Consumer<? super T> action)
 Default implementation:
 
 ```java
-for (T t : this) {
-    action.accept(t);
-}
+    default void forEach(Consumer<? super T> action) {
+        Objects.requireNonNull(action);
+        for (T t : this) {
+            action.accept(t);
+        }
+    }
 ```
 
 Example:

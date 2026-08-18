@@ -31,8 +31,7 @@ PriorityQueue(int initialCapacity);
 
 PriorityQueue(Comparator<? super E> comparator);
 
-PriorityQueue(int initialCapacity,
-                     Comparator<? super E> comparator);
+PriorityQueue(int initialCapacity, Comparator<? super E> comparator);
 
 PriorityQueue(Collection<? extends E> c);
 

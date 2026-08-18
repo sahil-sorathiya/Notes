@@ -185,21 +185,21 @@
 - ArrayDeque ✅
 
 ### Map
-- HashMap
-- LinkedHashMap
-- TreeMap
-- Hashtable
-- ConcurrentHashMap
+- HashMap ✅
+- LinkedHashMap ✅
+- TreeMap ✅
+- Hashtable ✅
+- ConcurrentHashMap ✅
 
 ### Iteration Techniques
-- Iterator
-- ListIterator
-- forEach
+- Iterator ✅
+- ListIterator ✅
+- forEach ✅
 
 ### Collection Utilities
-- Collections Class
-- Comparable
-- Comparator
+- Collections Class ✅
+- Comparable ✅
+- Comparator ✅
 
 ---
 
