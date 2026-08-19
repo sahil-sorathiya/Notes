@@ -112,7 +112,6 @@
 - Multiple Inheritance using Interfaces
 - Default Methods
 - Static Methods in Interface
-- Functional Interfaces
 
 ### Object Class
 - equals()
@@ -205,12 +204,12 @@
 
 # 6. Generics
 
-- Generic Classes
-- Generic Methods
-- Type Parameters
-- Wildcards
-- Bounded Types
-- Type Erasure
+- Generic Classes ✅
+- Generic Methods ✅
+- Type Parameters ✅
+- Wildcards ✅
+- Bounded Types ✅
+- Type Erasure ✅
 
 ---
 
