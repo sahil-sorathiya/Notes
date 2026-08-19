@@ -277,21 +277,21 @@
 # 10. Lambda Expressions & Functional Programming
 
 ### Lambda Expressions
-- Syntax
-- Functional Interfaces
+- Syntax ✅
+- Functional Interfaces ✅
 
 ### Built-in Functional Interfaces
-- Predicate
-- Function
-- Consumer
-- Supplier
-- UnaryOperator
-- BinaryOperator
+- Predicate ✅
+- Function ✅
+- Consumer ✅
+- Supplier ✅
+- UnaryOperator ✅
+- BinaryOperator ✅
 
 ### Method References
-- Static Method References
-- Instance Method References
-- Constructor References
+- Static Method References ✅
+- Instance Method References ✅
+- Constructor References ✅
 
 ---
 
