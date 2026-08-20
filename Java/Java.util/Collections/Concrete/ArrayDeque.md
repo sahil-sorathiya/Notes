@@ -20,7 +20,7 @@ default Stream<E> parallelStream();
 boolean containsAll(Collection<?> c);
 boolean addAll(Collection<? extends E> c);
 
-//seqcol
+// Declared in "SequencedCollection", Inheriting from "Deque"
 default Deque<E> reversed();
 ```
 
