@@ -207,7 +207,7 @@
 - Generic Classes ✅
 - Generic Methods ✅
 - Type Parameters ✅
-- Wildcards ✅
+- Wildcards ❌
 - Bounded Types ✅
 - Type Erasure ✅
 
